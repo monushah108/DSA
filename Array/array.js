@@ -35,3 +35,27 @@
 // }
 
 // console.log(LinerS(nums, target));
+
+// union of two sorted arrays
+let nums1 = [3, 4, 6, 7, 9, 9],
+  nums2 = [1, 5, 7, 8, 8];
+
+function unionArray(nums1, nums2) {
+  const set = new Set([...nums1, ...nums2]);
+  const unArr = [...set];
+
+  const n = unArr.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (unArr[i] > unArr[j]) {
+        let temp = unArr[i];
+        unArr[i] = unArr[j];
+        unArr[j] = temp;
+      }
+    }
+  }
+
+  return unArr;
+}
+
+console.log(unionArray(nums1, nums2));
