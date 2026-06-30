@@ -1,4 +1,4 @@
-// move zeros to end
+/* move zeros to end */
 
 // const nums = [0, 1, 4, 0, 5, 2];
 
@@ -22,7 +22,7 @@
 //   return nums;
 // }
 
-// linear Search
+/* linear Search *
 // let nums = [2, 3, 4, 5, 3];
 // let target = 6;
 
@@ -36,26 +36,65 @@
 
 // console.log(LinerS(nums, target));
 
-// union of two sorted arrays
-let nums1 = [3, 4, 6, 7, 9, 9],
-  nums2 = [1, 5, 7, 8, 8];
+/* union of two sorted arrays */
+// let nums1 = [3, 4, 6, 7, 9, 9],
+//   nums2 = [1, 5, 7, 8, 8];
 
-function unionArray(nums1, nums2) {
-  const set = new Set([...nums1, ...nums2]);
-  const unArr = [...set];
+// function unionArray(nums1, nums2) {
+//   const set = new Set([...nums1, ...nums2]);
+//   const unArr = [...set];
 
-  const n = unArr.length;
+//   const n = unArr.length;
+//   for (let i = 0; i < n; i++) {
+//     for (let j = i + 1; j < n; j++) {
+//       if (unArr[i] > unArr[j]) {
+//         let temp = unArr[i];
+//         unArr[i] = unArr[j];
+//         unArr[j] = temp;
+//       }
+//     }
+//   }
+
+//   return unArr;
+// }
+
+// console.log(unionArray(nums1, nums2));
+
+/*
+* 
+find missing number
+*
+*/
+// let nums = [0, 1, 2, 4, 5, 6];
+// function misNo(nums) {
+//   const n = nums.length;
+
+//   for (let i = 0; i <= n; i++) {
+//     if (!nums.includes(i)) {
+//       return i;
+//     }
+//   }
+// }
+// console.log(misNo(nums));
+
+/* max consecutive ones */
+let nums = [0];
+function findMaxConsecutiveOnes(nums) {
+  const n = nums.length;
+  let max = 0;
+  let count = 0;
+  let k = 0;
   for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
-      if (unArr[i] > unArr[j]) {
-        let temp = unArr[i];
-        unArr[i] = unArr[j];
-        unArr[j] = temp;
-      }
+    if (nums[k] == nums[i] && nums[i] > 0) {
+      count++;
+    } else if (nums[k] != nums[i]) {
+      k = i;
+      max = Math.max(max, count);
+      count = 1;
     }
   }
-
-  return unArr;
+  max = Math.max(max, count);
+  return max;
 }
 
-console.log(unionArray(nums1, nums2));
+console.log(findMaxConsecutiveOnes(nums));
