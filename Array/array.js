@@ -78,23 +78,47 @@ find missing number
 // console.log(misNo(nums));
 
 /* max consecutive ones */
-let nums = [0];
-function findMaxConsecutiveOnes(nums) {
-  const n = nums.length;
-  let max = 0;
-  let count = 0;
-  let k = 0;
-  for (let i = 0; i < n; i++) {
-    if (nums[k] == nums[i] && nums[i] > 0) {
-      count++;
-    } else if (nums[k] != nums[i]) {
-      k = i;
-      max = Math.max(max, count);
-      count = 1;
-    }
-  }
-  max = Math.max(max, count);
-  return max;
-}
+// let nums = [0];
+// function findMaxConsecutiveOnes(nums) {
+//   const n = nums.length;
+//   let max = 0;
+//   let count = 0;
+//   let k = 0;
+//   for (let i = 0; i < n; i++) {
+//     if (nums[k] == nums[i] && nums[i] > 0) {
+//       count++;
+//     } else if (nums[k] != nums[i]) {
+//       k = i;
+//       max = Math.max(max, count);
+//       count = 1;
+//     }
+//   }
+//   max = Math.max(max, count);
+//   return max;
+// }
 
-console.log(findMaxConsecutiveOnes(nums));
+// console.log(findMaxConsecutiveOnes(nums));
+
+/* single Number -1 */
+
+// let nums = [4, 1, 2, 1, 2];
+
+// function singleNumber(nums) {
+//   const n = nums.length;
+
+//   const map = new Map();
+
+//   for (let i = 0; i < n; i++) {
+//     let count = 0;
+//     for (let j = 0; j < n; j++) {
+//       if (nums[j] == nums[i]) {
+//         count++;
+//       }
+//     }
+//     map.set(count, nums[i]);
+//   }
+
+//   return map.get(1);
+// }
+
+// console.log(singleNumber(nums));
