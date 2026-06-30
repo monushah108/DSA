@@ -122,3 +122,44 @@ find missing number
 // }
 
 // console.log(singleNumber(nums));
+
+/* longest subArray with sum k */
+// let nums = [10, 5, 2, 7, 1, 9],
+//   k = 10;
+// function longestSubarray(nums, k) {
+//   let n = nums.length;
+
+//   let len = 0;
+//   for (let i = 0; i < n; i++) {
+//     let sum = 0;
+//     for (let j = i; j < n; j++) {
+//       sum += nums[j];
+//       if (sum == k) {
+//         len = Math.max(len, j - i + 1);
+//       }
+//     }
+//   }
+//   return len;
+// }
+
+// console.log(longestSubarray(nums, k));
+
+/* sort colors */
+
+function sortColors(nums) {
+  let n = nums.length;
+  let left = 0,
+    right = n - 1;
+
+  for (let i = 0; i < n; i++) {
+    if (nums[left] > nums[right]) {
+      let temp = nums[left];
+      nums[left] = nums[right];
+      nums[right] = temp;
+    } else if (nums[left] == nums[right]) {
+      break;
+    } else {
+      right--;
+    }
+  }
+}
