@@ -146,20 +146,46 @@ find missing number
 
 /* sort colors */
 
-function sortColors(nums) {
-  let n = nums.length;
-  let left = 0,
-    right = n - 1;
+// function sortColors(nums) {
+//   let n = nums.length;
+//   let left = 0, mid = 0
+//     right = n - 1;
 
-  for (let i = 0; i < n; i++) {
-    if (nums[left] > nums[right]) {
-      let temp = nums[left];
-      nums[left] = nums[right];
-      nums[right] = temp;
-    } else if (nums[left] == nums[right]) {
-      break;
-    } else {
-      right--;
-    }
-  }
-}
+//   for (let i = 0; i < n; i++) {
+//      if(nums[left] == nums[mid]) {
+//       let temp = nums[left]
+//       nums[left] = nums[mid]
+//       nums[mid] = temp
+//         left++
+//         mid++
+//      }
+//      else if (nums[mid] == 1 ) mid++
+
+//      else {
+//       let temp = nums[high]
+//       nums[high] = nums[mid]
+//       nums[mid] = temp
+//       high--
+//      }
+//   }
+// }
+
+/* kadane's algo */
+// let nums = [-2, -3, -5, -2, -7, -4];
+// function maxSubArray(nums) {
+//   let n = nums.length;
+//   let max = 0;
+//   let sum = 0;
+//   for (let i = 0; i < n; i++) {
+//     sum += nums[i];
+
+//     max = Math.max(sum, max);
+
+//     if (sum < 0) {
+//       sum = 0;
+//     }
+//   }
+
+//   return max;
+// }
+// console.log(maxSubArray(nums));
